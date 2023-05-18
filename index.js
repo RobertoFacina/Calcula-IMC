@@ -1,6 +1,38 @@
 // Calculando IMC
 
-function mostra(mensagem){
+alert("Este é um programa que vai calcular seu IMC");
+
+function mostra(frase){
+    document.write(frase);
+    document.write("<br>");
+}
+
+    
+let altura = document.getElementById('altura');
+let peso = document.getElementById('peso');
+
+function calculaImc(){
+
+    let valorPeso = Number(peso.value);
+    let valorAltura = Number(altura.value);
+    let imc = valorPeso / (valorAltura **2);
+    mostra("O cálculo do seu IMC é: " + imc + "<br>");
+    mostra("Arredondado fica em: " + Math.round(imc) + "<br>");
+
+    if(imc < 18.5){
+        mostra("Você está com o peso abaixo do normal <br>");
+    }else if(imc <= 24.9){
+        mostra("Você está com o peso normal <br>");
+    }else if(imc <= 29.9){
+        mostra("Você está com excesso de peso, tome cuidado <br>");
+    }else if(imc >= 30) {
+        mostra("Você está obeso!! <br>");
+    }
+    
+}
+
+
+/*function mostra(mensagem){
     document.write(mensagem);
 }
 
